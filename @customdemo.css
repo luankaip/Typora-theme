@@ -119,7 +119,7 @@
   font-family: "Rubik";
   font-style: normal;
   font-weight: normal;
-  src: local("Rubik"), url("./nord/Rubik-VF.woff2") format("woff2");
+  src: local("Rubik"), url("./@customdemo/Rubik-VF.woff2") format("woff2");
 }
 
 /* Fira Code is a variable font, too (gwyneth 20201123) */
@@ -127,7 +127,7 @@
   font-family: "Fira Code";
   font-style: normal;
   font-weight: normal;
-  src: local("Fira Code Retina"), local("Fira Code Regular"), local("Fira Code"), url("./nord/FiraCode-VF.woff2") format("woff2");
+  src: local("Fira Code Retina"), local("Fira Code Regular"), local("Fira Code"), url("./@customdemo/FiraCode-VF.woff2") format("woff2");
 }
 
 /* Source Code is a variable font, but it has separate Roman and Italic subfonts as of 2019 (gwyneth 20201123) */
@@ -135,14 +135,14 @@
   font-family: "Source Code";
   font-style: normal;
   font-weight: normal;
-  src: local("Source Code Regular"), local("Source Code Variable Regular"), local("Source Code"), url("./nord/SourceCodeVariable-Roman.woff2") format("woff2");
+  src: local("Source Code Regular"), local("Source Code Variable Regular"), local("Source Code"), url("./@customdemo/SourceCodeVariable-Roman.woff2") format("woff2");
 }
 
 @font-face {
   font-family: "Source Code";
   font-style: italic;
   font-weight: normal;
-  src: local("Source Code Italic"), local("Source Code Variable Italic"), local("Source Code"), url("./nord/SourceCodeVariable-Italic.woff2") format("woff2");
+  src: local("Source Code Italic"), local("Source Code Variable Italic"), local("Source Code"), url("./@customdemo/SourceCodeVariable-Italic.woff2") format("woff2");
 }
 
 
@@ -2106,35 +2106,44 @@ span.clear-btn-icon.icon.icon-cancel-circled {
 
 span.nav-group-item:hover,
 span.nav-group-item:active,
-span.nav-group-item.active {
+span.nav-group-item.active,
+span.export-item:hover,
+span.export-item:active,
+span.export-item.active {
   background: rgb(134, 134, 149) !important;
 }
 
-span.nav-group-item:hover {
+span.nav-group-item:hover,
+span.export-item:hover {
   opacity: 0.5;
 }
 
-span.nav-group-item:active {
+span.nav-group-item:active,
+span.export-item:active {
   opacity: 0.7;
 }
 
-span.nav-group-item.active {
+span.nav-group-item.active,
+span.export-item.active {
   opacity: 1;
 }
 
 a[target="_blank"] {
   color: #56B4FE;
   text-decoration: none !important;
+  margin-left: 3px;
 }
 
 a[target="_blank"]:hover {
   color: #FFE790;
-  text-decoration: underline !important;
+  outline: 1px dotted #FFE790;
+  outline-offset: 2px;
 }
 
-a[target="_blank"] > svg,
-a[target="_blank"] > svg:hover {
+a[target="_blank"][href="https://support.typora.io/Math/#line-breaking"],
+a[target="_blank"][href="https://support.typora.io/Math/#line-breaking"]:hover {
   color: #fff;
+  outline: none;
 }
 
 textarea {
