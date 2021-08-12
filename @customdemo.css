@@ -2097,3 +2097,55 @@ text.actor {
 .md-diagram-panel {
   border: none !important;
 }
+
+/* 偏好设置修改 */
+span.clear-btn-icon.icon.icon-cancel-circled {
+  top: 13px;
+  right: -3px;
+}
+
+span.nav-group-item:hover,
+span.nav-group-item:active,
+span.nav-group-item.active {
+  background: rgb(134, 134, 149) !important;
+}
+
+span.nav-group-item:hover {
+  opacity: 0.5;
+}
+
+span.nav-group-item:active {
+  opacity: 0.7;
+}
+
+span.nav-group-item.active {
+  opacity: 1;
+}
+
+a[target="_blank"] {
+  color: #56B4FE;
+  text-decoration: none !important;
+}
+
+a[target="_blank"]:hover {
+  color: #FFE790;
+  text-decoration: underline !important;
+}
+
+a[target="_blank"] > svg,
+a[target="_blank"] > svg:hover {
+  color: #fff;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.export-config .text-input select {
+	width: 94% !important;
+	opacity: 0.4;
+}
+
+div.export-detail {
+	max-width: 700px;
+}
