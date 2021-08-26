@@ -164,7 +164,7 @@ body {
 }
 
 /* link */
-#write a:not([role="menuitem"]) {
+#write a:not([role="menuitem"]):not(:empty) {
   color: var(--link-color) !important;
   text-decoration:none;
   padding: 0rem 0.2rem;
@@ -174,14 +174,14 @@ body {
   transition-delay: 0.2s;
 }
 
-#write a:not([role="menuitem"]):hover {
+#write a:not([role="menuitem"]):not(:empty):hover {
   color: #EEC14B !important;
   outline: 2px dashed #EEC14B;
   outline-offset: 1px;
   transition-delay: 0s;
 }
 
-#write a:not([role="menuitem"]):not(.md-toc-inner):hover {
+#write a:not([role="menuitem"]):not(.md-toc-inner):not(:empty):hover {
   margin: 0rem 0.3rem;
   transition-delay: 0s;
 }
@@ -433,6 +433,8 @@ mark {
 
 /* 代码1 */
 kbd {
+  word-break: break-all;
+  white-space: pre-wrap;
   font-size: 0.9em;
   padding: 4px 4px;
   margin: 0px 4px;
@@ -1259,17 +1261,13 @@ select[disabled]:hover {
 
 
 /* TODO: */
-.megamenu-menu-list li a {
+.megamenu-menu-list li a:not(i.fa::before) {
   line-height: 44px;
   height: 44px;
   padding-left: 32px;
   color: inherit;
   text-decoration: none;
   font-size: 22px;
-}
-
-.megamenu-menu-list li a.active, .megamenu-menu-list li a:hover {
-  background-color: #373B40 !important;
 }
 
 .megamenu-menu-list li a.active, .megamenu-menu-list li a:hover {
@@ -1351,7 +1349,7 @@ footer.ty-footer {
 ::-webkit-scrollbar {
   width: 10px;
   padding-right: 10px;
-  background-color: rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0) !important;;
 }
 
 /* scrollbar track */
@@ -1367,12 +1365,12 @@ footer.ty-footer {
   border-radius: 5px;
 }
 
-:hover::-webkit-scrollbar-thumb {background: linear-gradient(#00DBDE 0%, #6FF71E 100%);}/*鼠标悬浮在该类指向的控件上时滑块的样式*/
-::-webkit-scrollbar-thumb:hover {background: linear-gradient(#00DBDE 0%, #FC00FF 100%);}/*鼠标悬浮在滑块上时滑块的样式*/
-:hover::-webkit-scrollbar-thumb:horizontal {background: linear-gradient(90deg, #00DBDE 0%, #6FF71E 100%);}/*鼠标悬浮在该类指向的控件上时水平滑块的样式*/
-::-webkit-scrollbar-thumb:horizontal:hover {background: linear-gradient(90deg, #00DBDE 0%, #FC00FF 100%);}/*鼠标悬浮在滑块上时水平滑块的样式*/
-:hover::-webkit-scrollbar-track-piece:vertical:start {background: #00DBDE;}/*鼠标悬浮在该类指向的控件上时滑块上半部分的样式*/
-:hover::-webkit-scrollbar-track-piece:horizontal:start {background: #00DBDE;}/*鼠标悬浮在该类指向的控件上时水平滑块上半部分的样式*/
+:hover::-webkit-scrollbar-thumb {background: linear-gradient(#00DBDE 0%, #6FF71E 100%) !important;;}/*鼠标悬浮在该类指向的控件上时滑块的样式*/
+::-webkit-scrollbar-thumb:hover {background: linear-gradient(#00DBDE 0%, #FC00FF 100%) !important;}/*鼠标悬浮在滑块上时滑块的样式*/
+:hover::-webkit-scrollbar-thumb:horizontal {background: linear-gradient(90deg, #00DBDE 0%, #6FF71E 100%) !important;;}/*鼠标悬浮在该类指向的控件上时水平滑块的样式*/
+::-webkit-scrollbar-thumb:horizontal:hover {background: linear-gradient(90deg, #00DBDE 0%, #FC00FF 100%) !important;;}/*鼠标悬浮在滑块上时水平滑块的样式*/
+:hover::-webkit-scrollbar-track-piece:vertical:start {background: #00DBDE !important;;}/*鼠标悬浮在该类指向的控件上时滑块上半部分的样式*/
+:hover::-webkit-scrollbar-track-piece:horizontal:start {background: #00DBDE !important;;}/*鼠标悬浮在该类指向的控件上时水平滑块上半部分的样式*/
 
 /* tip when hover on a button */
 #ty-tooltip {
@@ -2157,4 +2155,248 @@ textarea {
 
 div.export-detail {
   max-width: 700px;
+}
+
+/* 底栏修改 */
+#outline-btn:active .ty-md-radio-button-on::before,
+#outline-btn:active .ty-md-radio-button-off::before {
+  content: "\E90A";
+}
+
+#outline-btn:hover .ion-chevron-left::before {
+  content: "\F124\F124\F124";
+}
+
+#outline-btn:active .ion-chevron-left::before {
+  content: "\F124";
+  text-shadow: 4px 0px 0px #fff, -4px 0px 0px #fff;
+}
+
+#toggle-sourceview-btn:hover .fa-code::before {
+  content: "\f120";
+  width: 15px;
+  display:inline-block;
+}
+
+#toggle-sourceview-btn:active .fa-code::before {
+  content: "\f101";
+}
+
+#footer-spell-check:hover .ty-spellcheck::before,
+#footer-spell-check:active .ty-spellcheck::before {
+  content: "\FF21";
+  vertical-align: 20%;
+}
+
+#footer-word-count:hover .ion-code::before,
+#footer-word-count:active .ion-code::before {
+  content: "\F270";
+}
+
+#footer-word-count-info tr[data-delimiter]:hover,
+#footer-word-count-info tr[data-delimiter]:active{
+  background: #373B40 !important;
+}
+
+#footer-spell-check:active .ty-spellcheck::before,
+#footer-word-count:active .ion-code::before,
+#footer-word-count-info tr[data-delimiter]:active,
+#footer-spell-check:hover #footer-spell-check-label,
+#footer-spell-check:active #footer-spell-check-label {
+  color: #fff;
+  font-weight: 900;
+}
+
+#footer-spell-check:active #footer-spell-check-label {
+  color: #aaa;
+}
+
+li.ty-spell-check-panel-item.ty-checked .ty-spell-check-panel-item-status::before {
+  content: "\2714";
+}
+
+li.ty-spell-check-panel-item.ty-checked:hover .ty-spell-check-panel-item-status::before {
+  content: "\2714";
+}
+
+li.ty-spell-check-panel-item:not(.ty-checked):hover .ty-spell-check-panel-item-status::before {
+  content: "\2713";
+  color: #aaa;
+}
+
+li.ty-spell-check-panel-item:not(.ty-checked):active .ty-spell-check-panel-item-status::before {
+  content: "\2713";
+  color: #fff;
+}
+
+/* 菜单栏修改 */
+@media (max-width: 540px) {
+  .megamenu-menu-header #megamenu-menu-header-title {
+    display: none;
+  }
+}
+
+@media (max-width: 530px) {
+  .megamenu-menu-list li.saved {
+    display: none;
+  }
+}
+
+.megamenu-menu-header:hover {
+  background: #2E3440;
+}
+
+.megamenu-menu-list li.divider {
+  background: #2E3440 !important;
+  height: 4px;
+  margin: 0px;
+}
+
+#recent-document-table .recent-file-item:hover {
+  background: #1D1F23 !important;
+}
+
+#recent-document-table .recent-file-item:hover .recent-file-name {
+  color: #ccc !important;
+}
+
+#recent-document-table .recent-file-item:active .recent-file-name {
+  color: #fff !important;
+}
+
+/* 右键菜单栏修改 */
+.context-menu li.active a {
+  background: #2E3440 !important;
+}
+
+.context-menu li:active a {
+  color: #ccc !important;
+  font-weight: 900 !important;
+}
+
+/* 表格修改 */
+button[data-localize="Cancel"],
+button[data-localize="OK"] {
+  background: #7F8187 !important;
+}
+
+button[data-localize="Cancel"]:hover,
+button[data-localize="OK"]:hover {
+  background: #3B4252 !important;
+}
+
+button[data-localize="Cancel"]:active,
+button[data-localize="OK"]:active {
+  background: #2E3440 !important;
+}
+
+/* 侧边栏修改 */
+/* 文件(列表) */
+.file-tree-node:hover > .file-node-background {
+  border-left: 4px double #aaa;
+  background: #333947;
+}
+/* 文件(树) */
+#file-library .file-list-item:hover,
+#file-library .file-list-item:not(.active):hover {
+  background: #333947;
+}
+#file-library .file-list-item:not(.active):hover {
+  border-left: 4px double #aaa;
+}
+/* 侧边栏底栏修改 */
+#sidebar-new-file-btn:hover,
+#sidebar-new-file-btn:active,
+#sidebar-menu-btn:hover .sidebar-footer-item,
+#switch-file-list-btn:hover {
+  background: #2E3440;
+}
+
+#sidebar-new-file-btn:hover .ty-add::before {
+  content: "\E90F";
+  display: inline-block;
+  transform: scale(0.8);
+}
+
+#sidebar-new-file-btn:active .ty-add::before {
+  content: "\E90E";
+  display: inline-block;
+  transform: rotate(45deg) scale(1.4);
+}
+
+#sidebar-menu-btn:hover .ty-dots-v::before {
+  content: "\E919";
+}
+
+#switch-file-list-btn:hover .ty-three-cells:before,
+#switch-file-list-btn:hover .ty-file-tree:before {
+  text-shadow: 0 0 5px #aaa;
+}
+
+#switch-file-list-btn:active .ty-three-cells:before,
+#switch-file-list-btn:active .ty-file-tree:before {
+  text-shadow: 0 0 5px #222;
+}
+
+#close-sidebar-menu-btn:hover {
+  color: #aaa;
+  text-shadow: 0 0 2px #ddd;
+}
+
+.file-action-item.not-empty-menu-group:hover a,
+.folder-menu-item.file-action-item.folder-menu-groupm.selected-folder-menu-item:hover a {
+  background: #2E3440;
+}
+
+/* 大纲 */
+.ion-close-round::before {
+  padding-top: 6px;
+}
+
+.ion-close-round:hover::before {
+  color: #aaa;
+}
+
+.ion-close-round:active::before {
+  content: "\F12A";
+  color: #fff;
+  font-weight: 900;
+}
+
+.info-panel-tab-title:hover + .info-panel-tab-border {
+  width: 75%;
+  height: 4px;
+  margin: auto;
+  background: #aaa;
+  border-radius: 3px;
+}
+
+.outline-item:hover {
+  background: #333947;
+}
+
+.outline-item:active {
+  color: #fff;
+  font-weight: 900;
+}
+
+.outline-item:hover .outline-label::after,
+.outline-item:active .outline-label::after,
+.outline-item-active .outline-label::after {
+  font-size: 16px;
+  position: absolute;
+  top: 6px;
+  right: -16px;
+}
+
+.outline-item:hover .outline-label::after{
+  content: "\2B98";
+}
+
+.outline-item:active .outline-label::after {
+  content: "\2B9C";
+}
+
+.outline-item-active .outline-label::after {
+  content: "\25C0" !important;
 }
