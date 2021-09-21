@@ -2400,3 +2400,18 @@ button[data-localize="OK"]:active {
 .outline-item-active .outline-label::after {
   content: "\25C0" !important;
 }
+
+/* 选择代码语言界面 */
+#ty-auto-suggest {
+  max-height: 260px !important;
+  min-width: 165px !important;
+  transform: translateX(-12px);
+}
+
+.auto-suggest-container li:hover {
+  background: #373B40;
+}
+
+.auto-suggest-container li:active {
+  text-shadow: 0 0 8px #fff;
+}
