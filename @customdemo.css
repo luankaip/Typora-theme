@@ -1440,7 +1440,7 @@ code {
   background-color: var(--bg-color5);
   border-radius: 6px;
   padding: 8px 4px 8px 4px !important;
-  margin-top: 15px;
+  /* margin-top: 15px; */
   margin-bottom: 15px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
