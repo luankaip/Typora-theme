@@ -1789,7 +1789,7 @@ pre.md-meta-block:active {
 
 .modal-backdrop {
   background-color: black;
-  opacity: 0.3 !important;
+  opacity: 1 !important;
 }
 
 /* zoom  */
