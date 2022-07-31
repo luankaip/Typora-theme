@@ -419,6 +419,11 @@ ol {
   padding-left: 30px;
 }
 
+/* 加粗 */
+strong {
+	color: #b77174;
+}
+
 /* 高亮 */
 mark {
   border-radius: 4px;
