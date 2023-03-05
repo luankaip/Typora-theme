@@ -2065,7 +2065,7 @@ text.actor {
 }
 
 .md-fences[lang="mermaid"] .md-diagram-panel-preview text {
-  fill: #fff !important;
+  fill: #000 !important;
 }
 
 .md-fences[lang="mermaid"] .md-diagram-panel-preview text[class="messageText"] {
