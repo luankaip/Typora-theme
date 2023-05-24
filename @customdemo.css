@@ -434,20 +434,23 @@ mark {
   margin-right: 2px;
   padding: 1px 4px 1px 4px;
   border-bottom: none;
+  white-space: break-spaces;
+  -webkit-box-decoration-break: clone;
 }
 
 /* 代码1 */
 kbd {
-  word-break: break-all;
-  white-space: pre-wrap;
   font-size: 0.9em;
-  padding: 4px 4px;
+  padding: 4px;
   margin: 0px 4px;
   font-size: 90%;
   color: #fff;
   background-color: #333;
   border-radius: 3px;
   box-shadow: inset 0 -1px 0 rgba(0,0,0,.25);
+  word-break: break-all;
+  white-space: break-spaces;
+  -webkit-box-decoration-break: clone;
 }
 
 /* 代码2 */
@@ -461,8 +464,9 @@ var {
   padding: 2px 4px;
   margin: 0px 4px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-  position: relative;
-  bottom: 0.1em;
+  word-break: break-all;
+  white-space: break-spaces;
+  -webkit-box-decoration-break: clone;
 }
 
 /* 代码3 */
@@ -471,11 +475,13 @@ dfn {
   font-size: 0.9em;
   padding: 0px 2px;
   margin: 0px 2px;
-  font-size: 90%;
-  color: #fff;
+  color: #dd496e;
+  background-color: #2b141a;
   border-radius: 3px;
-  border: 2px dotted #F09F39;
-  box-shadow: 0 0 0 2px #F09F39;
+  box-shadow: 0 0 4px #390000;
+  word-break: break-all;
+  white-space: break-spaces;
+  -webkit-box-decoration-break: clone;
 }
 
 /* 代码4 */
@@ -487,6 +493,9 @@ cite {
   background: #F4BC6E;
   color: #000;
   border-radius: 3px;
+  word-break: break-all;
+  white-space: break-spaces;
+  -webkit-box-decoration-break: clone;
 }
 
 /* 代码5 */
@@ -499,6 +508,9 @@ samp {
   color: #2F3440;
   border-radius: 8px;
   border: 5px double #2e3440;
+  word-break: break-all;
+  white-space: break-spaces;
+  -webkit-box-decoration-break: clone;
 }
 
 /* 标注 */
@@ -1435,8 +1447,8 @@ code {
   padding: 2px 4px;
   margin: 0px 4px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-  position: relative;
-  bottom: 0.1em;
+  white-space: break-spaces;
+  -webkit-box-decoration-break: clone;
 }
 
 /* codeblock */
@@ -2419,4 +2431,20 @@ button[data-localize="OK"]:active {
 
 .auto-suggest-container li:active {
   text-shadow: 0 0 8px #fff;
+}
+
+/* 脚注优化 */
+.md-plain {
+  word-break: break-all;
+  white-space: break-spaces;
+}
+
+.md-def-name {
+  word-break: break-all;
+  display: unset;
+  text-align: unset;
+}
+
+sup.md-footnote {
+  -webkit-box-decoration-break: clone;
 }
